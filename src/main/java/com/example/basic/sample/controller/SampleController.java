@@ -20,22 +20,22 @@ public class SampleController {
     }
 
     @GetMapping("/{sampleId}")
-    public Sample getSample(int sampleId) {
+    public Sample getSample(@PathVariable("sampleId") int sampleId) {
         return sampleService.getSample(sampleId);
     }
 
     @PostMapping("")
-    public void insertSample(Sample sample) {
+    public void insertSample(@RequestBody Sample sample) {
         sampleService.insertSample(sample);
     }
 
     @PutMapping("")
-    public void updateSample(Sample sample) {
+    public void updateSample(@RequestBody Sample sample) {
         sampleService.updateSample(sample);
     }
 
     @DeleteMapping("/{sampleId}")
-    public void deleteSample(int sampleId) {
+    public void deleteSample(@PathVariable("sampleId") int sampleId) {
         sampleService.deleteSample(sampleId);
     }
 

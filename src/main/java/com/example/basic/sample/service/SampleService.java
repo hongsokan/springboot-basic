@@ -2,7 +2,6 @@ package com.example.basic.sample.service;
 
 import com.example.basic.sample.mapper.SampleMapper;
 import com.example.basic.sample.model.Sample;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +28,7 @@ public class SampleService {
 
 
     public void insertSample(Sample sample) {
+        System.out.println(sample.toString());
         sampleMapper.insertSample(sample);
     }
 
