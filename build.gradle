@@ -29,6 +29,9 @@ dependencies {
     // Swagger Document
     implementation      'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
 
+    implementation 'ch.qos.logback:logback-classic:1.4.6'
+    implementation 'org.slf4j:slf4j-log4j12:2.0.10'
+
     // Security
 //    implementation 'org.springframework.boot:spring-boot-starter-security'
 //    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
