@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.basic.sample.mapper.SampleBoardMapper">
+    <select id="getSampleList" resultType="com.example.basic.sample.model.SampleBoard">
+        select BOARD_ID,
+               BOARD_TYPE,
+            TITLE,
+            CONTENTS,
+            REG_DATE
+        from basic.SAMPLE_BOARD
+    </select>
+
+    <select id="getSample" parameterType="int" resultType="com.example.basic.sample.model.SampleBoard">
+        select BOARD_ID,
+               BOARD_TYPE,
+               TITLE,
+               CONTENTS,
+               REG_DATE
+        from basic.SAMPLE_BOARD where BOARD_ID = #{boardId}
+    </select>
+
+    <insert id="insertSample" parameterType="com.example.basic.sample.model.Sample" useGeneratedKeys="true" keyProperty="sampleId">
+        insert into SAMPLE
+        (TITLE, CONTENTS, REG_DATE)
+        values
+        (#{title}, #{contents}, NOW())
+    </insert>
+
+    <update id="updateSample" parameterType="com.example.basic.sample.model.Sample">
+        update SAMPLE
+        set TITLE = #{title},
+            CONTENTS = #{contents}
+        where SAMPLE_ID = #{sampleId}
+    </update>
+
+    <delete id="deleteSample" parameterType="int">
+        delete from SAMPLE
+        where SAMPLE_ID = #{sampleId}
+    </delete>
+</mapper>
