@@ -92,3 +92,7 @@ implementation 'org.slf4j:slf4j-log4j12:2.0.10'
     </root>
 </configuration>
 ```
+
+### 4. AdminLTE 템플릿 추가
+- Thymeleaf Layout Dialect 세팅 (https://ultraq.github.io/thymeleaf-layout-dialect/)
+- AdminLTE 템플릿 세팅 (https://adminlte.io/)
