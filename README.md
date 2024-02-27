@@ -1,4 +1,4 @@
-# springboot basic
+# springboot boilderplate
 - 프로젝트 기본 설정 모음
 
 ## 기본 설정
