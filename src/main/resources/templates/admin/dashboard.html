@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{/admin/layout}">
+      layout:decorate="~{/admin/common/layout}">
 <head>
     <meta charset="UTF-8">
     <title>대시보드</title>
@@ -194,6 +194,7 @@
     </div>
 
     <th:block layout:fragment="script">
+        <script src="admin/plugins/chart.js/Chart.min.js"></script>
         <script>
             console.log("Dashboard");
 
