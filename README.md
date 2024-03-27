@@ -13,20 +13,19 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 ```
 ```sql
-CREATE TABLE `SAMPLE`
+CREATE TABLE `sample`
 (
-    `SAMPLE_ID` int(11)      NOT NULL AUTO_INCREMENT,
-    `TITLE`     varchar(100) NOT NULL,
-    `CONTENTS`  text         NOT NULL,
-    `REG_DATE`  datetime     NOT NULL,
-    PRIMARY KEY (`SAMPLE_ID`)
+    `sample_id` int(11)      NOT NULL AUTO_INCREMENT,
+    `title`     varchar(100) NOT NULL,
+    `contents`  text         NOT NULL,
+    `reg_date`  datetime     NOT NULL,
+    PRIMARY KEY (`sample_id`)
 ) ENGINE = InnoDB
-#   AUTO_INCREMENT = 23
   DEFAULT CHARSET = utf8 COMMENT ='샘플';
 
 -- 샘플 INSERT QUERY
-INSERT INTO SAMPLE (TITLE, CONTENTS, REG_DATE)
-VALUES ('테스트', '테스트 컨텐츠', NOW());
+INSERT INTO sample (title, contents, reg_date)
+VALUES ('테스트', '테스트 컨텐츠', now());
 ```
 
 - DatabaseConfig.java : 

@@ -4,37 +4,37 @@
 
 <mapper namespace="com.example.basic.sample.mapper.SampleMapper">
     <select id="getSampleList" resultType="com.example.basic.sample.model.Sample">
-        select SAMPLE_ID,
-            TITLE,
-            CONTENTS,
-            REG_DATE
-        from basic.SAMPLE
+        select sample_id,
+            title,
+            contents,
+            reg_date
+        from basic.sample
     </select>
 
     <select id="getSample" parameterType="int" resultType="com.example.basic.sample.model.Sample">
-        select SAMPLE_ID,
-               TITLE,
-               CONTENTS,
-               REG_DATE
-        from basic.SAMPLE where SAMPLE_ID = #{sampleId}
+        select sample_id,
+               title,
+               contents,
+               reg_date
+        from basic.sample where sample_id = #{sampleId}
     </select>
 
     <insert id="insertSample" parameterType="com.example.basic.sample.model.Sample" useGeneratedKeys="true" keyProperty="sampleId">
-        insert into SAMPLE
-        (TITLE, CONTENTS, REG_DATE)
+        insert into sample
+        (title, contents, reg_date)
         values
-        (#{title}, #{contents}, NOW())
+        (#{title}, #{contents}, now())
     </insert>
 
     <update id="updateSample" parameterType="com.example.basic.sample.model.Sample">
-        update SAMPLE
-        set TITLE = #{title},
-            CONTENTS = #{contents}
-        where SAMPLE_ID = #{sampleId}
+        update sample
+        set title = #{title},
+            contents = #{contents}
+        where sample_id = #{sampleId}
     </update>
 
     <delete id="deleteSample" parameterType="int">
-        delete from SAMPLE
-        where SAMPLE_ID = #{sampleId}
+        delete from sample
+        where sample_id = #{sampleId}
     </delete>
 </mapper>
